@@ -1,12 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './header/header';
+import { DateDatePicker } from "./inputs/date-date-picker/date-date-picker"; // <-- import nominato
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [HeaderComponent, DateDatePicker],
   templateUrl: './app.html',
-  styleUrl: './app.sass'
+  styleUrls: ['./app.sass']
 })
+
 export class App {
   protected readonly title = signal('booking');
 }
