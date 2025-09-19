@@ -1,19 +1,20 @@
 
-<div class="space-x-4">
+<div>
 
-    <p class="border rounded-lg w-max px-2 border-[#3f51b5] text-[#3f51b5] mb-4">Starting Date</p>
+        <p class="bg-gray-500 text-center px-2 text-white rounded-t-lg py-2">Starting Date</p>
     
-    <mat-form-field appearance="fill">
-        <mat-label>Data</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="data" [disabled]="true">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-        <mat-label>Ora</mat-label>
-        <input matInput type="time" [(ngModel)]="ora" [disabled]="true">
-    </mat-form-field>
+    <div class="grid grid-cols-2">
+        <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="data" [disabled]="true">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Hour</mat-label>
+            <input matInput type="time" [(ngModel)]="ora" [disabled]="true">
+        </mat-form-field>
+    </div>
 
 </div>
 

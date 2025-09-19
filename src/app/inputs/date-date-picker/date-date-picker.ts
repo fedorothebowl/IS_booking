@@ -18,7 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   templateUrl: './date-date-picker.html',
   styleUrls: ['./date-date-picker.sass']
 })
-export class DateDatePicker {
+export class DateDatePickerComponent {
   // Imposta data odierna
   data: Date = new Date();
 
