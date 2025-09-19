@@ -1,21 +1,26 @@
-  
 <main class="p-4 overflow-y-visible">
-
-  <div class="rounded-lg border-x border-b border-gray-200 space-y-16 ">
-
+  <div class="rounded-lg border-x border-b border-gray-200 space-y-16">
     <app-header />
-    <form class="p-4 py-8 space-y-8">
+    
+    <!-- 🔹 Aggiungi [formGroup]="form" -->
+    <form [formGroup]="form" (ngSubmit)="save()" class="p-4 py-8 space-y-8">
       
       <!-- Sezione 1 -->
       <section class="p-4 rounded-lg border border-gray-200 shadow-sm bg-white text-center">
         <p class="uppercase font-bold text-sm text-[#3f51b5]">Section 1</p>
-        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius adipisci nemo, unde perferendis voluptates magnam iusto vel soluta esse! Porro enim culpa ut harum repellendus corrupti laboriosam, laborum exercitationem illum.</p>
+        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         <div class="grid grid-cols-2 gap-4">
-          <app-date-date-picker />
-          <app-numeric label="Freight Order" />
-          <app-select label="Loading Unloading Point Code" [options]="['Code 001', 'Code 002', 'Code 003']"
+          <app-date-date-picker formControlName="date" />
+          <app-numeric label="Freight Order" formControlName="freightOrder" />
+          <app-select 
+            label="Loading Unloading Point Code" 
+            formControlName="loadingCode"
+            [options]="['Code 001', 'Code 002', 'Code 003']"
             [required]="true" />
-          <app-select label="Loading Unloading Point Description" [options]="['Desc A', 'Desc B', 'Desc C']"
+          <app-select 
+            label="Loading Unloading Point Description" 
+            formControlName="loadingDesc"
+            [options]="['Desc A', 'Desc B', 'Desc C']"
             [required]="true" />
         </div>
       </section>
@@ -23,32 +28,57 @@
       <!-- Sezione 2 -->
       <section class="p-4 rounded-lg border border-gray-200 shadow-sm bg-white text-center">
         <p class="uppercase font-bold text-sm text-[#3f51b5]">Section 2</p>
-        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius adipisci nemo, unde perferendis voluptates magnam iusto vel soluta esse! Porro enim culpa ut harum repellendus corrupti laboriosam, laborum exercitationem illum.</p>
+        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         <div class="grid grid-cols-2 gap-4">
-          <app-select label="Customer" [options]="['Customer 1', 'Customer 2', 'Customer 3']" [required]="true" />
-          <app-select label="Destination" [options]="['Destination A', 'Destination B', 'Destination C']"
+          <app-select 
+            label="Customer" 
+            formControlName="customer"
+            [options]="['Customer 1', 'Customer 2', 'Customer 3']" 
             [required]="true" />
-          <app-select label="Carrier" [options]="['Carrier A', 'Carrier B', 'Carrier C']" [required]="false" />
+          <app-select 
+            label="Destination" 
+            formControlName="destination"
+            [options]="['Destination A', 'Destination B', 'Destination C']"
+            [required]="true" />
+          <app-select 
+            label="Carrier" 
+            formControlName="carrier"
+            [options]="['Carrier A', 'Carrier B', 'Carrier C']" 
+            [required]="false" />
         </div>
       </section>
 
       <!-- Sezione 3 -->
       <section class="p-4 rounded-lg border border-gray-200 shadow-sm bg-white text-center">
         <p class="uppercase font-bold text-sm text-[#3f51b5]">Section 3</p>
-        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius adipisci nemo, unde perferendis voluptates magnam iusto vel soluta esse! Porro enim culpa ut harum repellendus corrupti laboriosam, laborum exercitationem illum.</p>
+        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
         <div class="grid grid-cols-2 gap-4">
-          <app-select label="Product" [options]="['Product A', 'Product B', 'Product C']" [required]="true" />
-          <app-select label="Quantity" [options]="['1', '2', '3']" [required]="true" />
-          <app-select label="UM" [options]="['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum']" [required]="true" />
-          <app-select label="BatchNumber" [options]="['BatchNumber', 'BatchNumber', 'BatchNumber']" [required]="true" />
+          <app-select 
+            label="Product" 
+            formControlName="product"
+            [options]="['Product A', 'Product B', 'Product C']" 
+            [required]="true" />
+          <app-select 
+            label="Quantity" 
+            formControlName="quantity"
+            [options]="['1', '2', '3']" 
+            [required]="true" />
+          <app-select 
+            label="UM" 
+            formControlName="um"
+            [options]="['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum']" 
+            [required]="true" />
+          <app-select 
+            label="BatchNumber" 
+            formControlName="batch"
+            [options]="['BatchNumber', 'BatchNumber', 'BatchNumber']" 
+            [required]="true" />
         </div>
       </section>
 
-      <button mat-flat-button color="primary" class="!px-10 !py-6 w-full" [disabled]="true">Save</button>
-      <!-- <button matButton="outlined" (click)="openSnackBar('Recorded Order!', 'Close')">Show snack-bar</button> -->
-
+      <button mat-flat-button color="primary" type="submit" class="!px-10 !py-6 w-full">
+        Save
+      </button>
     </form>
-
   </div>
-  
 </main>

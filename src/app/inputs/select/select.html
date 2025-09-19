@@ -5,7 +5,11 @@
     
     <mat-form-field appearance="fill" class="w-full">
       <mat-label>{{ label }}</mat-label>
-      <mat-select [(ngModel)]="selectedValue" required>
+        <mat-select 
+            [value]="selectedValue"
+            (selectionChange)="onSelectionChange($event.value)"
+            (blur)="onBlur()"
+            [required]="required">
         <mat-option *ngFor="let option of options" [value]="option">
           {{ option }}
         </mat-option>
