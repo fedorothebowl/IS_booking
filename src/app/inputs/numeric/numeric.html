@@ -4,6 +4,7 @@
     <mat-label>{{ label }}</mat-label>
   <input 
     matInput 
+    [required]="required"
     type="number"
     [value]="value || ''"
     (input)="onInput($event)"

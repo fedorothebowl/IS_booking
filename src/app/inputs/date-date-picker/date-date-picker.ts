@@ -49,13 +49,6 @@ export class DateDatePickerComponent implements ControlValueAccessor {
     this.onTouched();
   }
 
-  // Chiamato quando l'ora cambia
-  onOraChange(newOra: string) {
-    this.ora = newOra;
-    this.onTouched();
-  }
-
-  // ControlValueAccessor methods
   writeValue(value: any): void {
     if (value) {
       this.data = new Date(value);

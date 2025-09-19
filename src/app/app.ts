@@ -44,10 +44,10 @@ export class App {
   });
 
   save() {
-      console.log(this.form.value);
+    console.log(this.form.value);
     if (this.form.valid) {
       this.openSnackBar('Form saved successfully!', 'Close', 'success');
-      this.form.reset();
+    this.reset();
     } else {
       this.openSnackBar('Please fill all required fields', 'Close', 'error');
     }
@@ -61,6 +61,22 @@ export class App {
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
       panelClass: panelClass,
+    });
+  }
+
+  reset(){
+    this.form.reset({
+      date: new Date(), // qui ricarichi la data attuale
+      freightOrder: '',
+      loadingCode: '',
+      loadingDesc: '',
+      customer: '',
+      destination: '',
+      carrier: '',
+      product: '',
+      quantity: '',
+      um: '',
+      batch: ''
     });
   }
 

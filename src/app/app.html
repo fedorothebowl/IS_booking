@@ -1,78 +1,81 @@
 <main class="p-4 overflow-y-visible">
   <div class="rounded-lg border-x border-b border-gray-200 space-y-16">
     <app-header />
-    
-    <!-- 🔹 Aggiungi [formGroup]="form" -->
+
     <form [formGroup]="form" (ngSubmit)="save()" class="p-4 py-8 space-y-8">
-      
       <!-- Sezione 1 -->
       <section class="p-4 rounded-lg border border-gray-200 shadow-sm bg-white text-center">
-        <p class="uppercase font-bold text-sm text-[#3f51b5]">Section 1</p>
-        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="grid grid-cols-2 gap-4">
+          <p class="uppercase font-bold text-sm text-[#3f51b5] mb-4">Booking</p>
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
           <app-date-date-picker formControlName="date" />
-          <app-numeric label="Freight Order" formControlName="freightOrder" />
-          <app-select 
-            label="Loading Unloading Point Code" 
+          <app-numeric label="Freight Order" formControlName="freightOrder" [required]="true"/>
+          <app-select
+            label="Loading Unloading Point Code"
             formControlName="loadingCode"
             [options]="['Code 001', 'Code 002', 'Code 003']"
-            [required]="true" />
-          <app-select 
-            label="Loading Unloading Point Description" 
+            [required]="true"
+          />
+          <app-select
+            label="Loading Unloading Point Description"
             formControlName="loadingDesc"
             [options]="['Desc A', 'Desc B', 'Desc C']"
-            [required]="true" />
+            [required]="true"
+          />
         </div>
       </section>
 
       <!-- Sezione 2 -->
       <section class="p-4 rounded-lg border border-gray-200 shadow-sm bg-white text-center">
-        <p class="uppercase font-bold text-sm text-[#3f51b5]">Section 2</p>
-        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="grid grid-cols-2 gap-4">
-          <app-select 
-            label="Customer" 
+        <p class="uppercase font-bold text-sm text-[#3f51b5] mb-4">Customer</p>
+        <div class="grid lg:grid-cols-2 gap-4">
+          <app-select
+            label="Customer"
             formControlName="customer"
-            [options]="['Customer 1', 'Customer 2', 'Customer 3']" 
-            [required]="true" />
-          <app-select 
-            label="Destination" 
+            [options]="['Customer 1', 'Customer 2', 'Customer 3']"
+            [required]="true"
+          />
+          <app-select
+            label="Destination"
             formControlName="destination"
             [options]="['Destination A', 'Destination B', 'Destination C']"
-            [required]="true" />
-          <app-select 
-            label="Carrier" 
+            [required]="true"
+          />
+          <app-select
+            label="Carrier"
             formControlName="carrier"
-            [options]="['Carrier A', 'Carrier B', 'Carrier C']" 
-            [required]="false" />
+            [options]="['Carrier A', 'Carrier B', 'Carrier C']"
+            [required]="false"
+          />
         </div>
       </section>
 
       <!-- Sezione 3 -->
       <section class="p-4 rounded-lg border border-gray-200 shadow-sm bg-white text-center">
-        <p class="uppercase font-bold text-sm text-[#3f51b5]">Section 3</p>
-        <p class="text-xs mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="grid grid-cols-2 gap-4">
-          <app-select 
-            label="Product" 
+        <p class="uppercase font-bold text-sm text-[#3f51b5] mb-4">Product</p>
+        <div class="grid lg:grid-cols-2 gap-4">
+          <app-select
+            label="Product"
             formControlName="product"
-            [options]="['Product A', 'Product B', 'Product C']" 
-            [required]="true" />
-          <app-select 
-            label="Quantity" 
+            [options]="['Product A', 'Product B', 'Product C']"
+            [required]="true"
+          />
+          <app-numeric
+            label="Quantity"
             formControlName="quantity"
-            [options]="['1', '2', '3']" 
-            [required]="true" />
-          <app-select 
-            label="UM" 
+            [required]="true"
+          />
+          <app-select
+            label="UM"
             formControlName="um"
-            [options]="['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum']" 
-            [required]="true" />
-          <app-select 
-            label="BatchNumber" 
+            [options]="['KTG1', 'UKIT', 'ITN4']"
+            [required]="true"
+          />
+          <app-select
+            label="Batch Number"
             formControlName="batch"
-            [options]="['BatchNumber', 'BatchNumber', 'BatchNumber']" 
-            [required]="true" />
+            [options]="['0987654321', '0987654321', '0987654321']"
+            [required]="true"
+          />
         </div>
       </section>
 

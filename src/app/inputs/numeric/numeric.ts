@@ -1,5 +1,6 @@
 import { Component, Input, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+
 import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -19,7 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class NumericComponent implements ControlValueAccessor {
   @Input() label: string = '';
-  
+  @Input() required: boolean = false;
+
   // Valore interno del componente
   value: number | null = null;
   
